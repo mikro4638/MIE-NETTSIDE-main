@@ -11,20 +11,20 @@ import Layout from '../layouts/Layout.astro';
         UX, and creating connections between people and technology.
       </p>
       <div class="buttons">
-        <a href="/CV_Mie_Kronkvist.pdf" target="_blank" class="btn">📄 View CV</a>
+        <a href={`${import.meta.env.BASE_URL}cv_mie_kronkvist.pdf`} target="_blank" class="btn">📄 View CV</a>
         <a href="https://www.linkedin.com/in/mie-elisabeth-kronkvist-463395304/" target="_blank" class="btn">🔗 LinkedIn</a>
       </div>
     </div>
 
     <div class="hero-image">
-      <img src="/MieBoat.JPG" alt="Bilde av Mie" />
+      <img src={`${import.meta.env.BASE_URL}mieboat.jpg`} alt="Bilde av Mie" />
     </div>
   </section>
 
   <!-- UiB-logo og tekst under -->
   <div class="uib-bottom">
     <a href="https://www4.uib.no/studier/program/kognitiv-vitskap-bachelor" target="_blank">
-      <img src="/uib-logo.png" alt="UiB" class="uib-logo-large" />
+      <img src={`${import.meta.env.BASE_URL}uib-logo.png`} alt="UiB" class="uib-logo-large" />
     </a>
     <div class="uib-arrow">⬆</div>
     <p class="uib-text">
@@ -71,7 +71,6 @@ import Layout from '../layouts/Layout.astro';
     margin-bottom: 10px;
   }
 
-  /* Knapper: lys som default, mørke på hover */
   .btn {
     background: white;
     color: #ff6f61;
@@ -97,7 +96,6 @@ import Layout from '../layouts/Layout.astro';
     box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   }
 
-  /* UiB-logo nederst */
   .uib-bottom {
     margin-top: 60px;
     text-align: center;
@@ -110,7 +108,7 @@ import Layout from '../layouts/Layout.astro';
     border-radius: 50%;
     background: white;
     padding: 15px;
-    cursor: pointer; /* tydelig klikkbar */
+    cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
@@ -119,7 +117,6 @@ import Layout from '../layouts/Layout.astro';
     box-shadow: 0 0 25px rgba(255, 111, 97, 0.8);
   }
 
-  /* Pil opp under logoen */
   .uib-arrow {
     font-size: 1.5rem;
     color: #333;
@@ -143,7 +140,6 @@ import Layout from '../layouts/Layout.astro';
     font-family: 'Poppins', sans-serif;
   }
 
-  /* Fade-in animasjon */
   .fade-in {
     opacity: 0;
     animation: fadeIn 1.2s forwards;

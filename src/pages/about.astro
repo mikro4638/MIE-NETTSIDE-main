@@ -1,0 +1,157 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="About - Mie Kronkvist">
+  <section class="about-container">
+    <h1 class="title">About Me</h1>
+
+    <div class="personal-info highlight-box">
+      <p>
+        My name is <strong>Mie Elisabeth Kronkvist</strong>, I am 23 years old and from Oslo. 
+        I moved to Bergen in the summer of 2023 and am now in my final year of the Bachelor's 
+        program in Cognitive Science at the University of Bergen. The program combines IT and 
+        psychology, focusing on how people think and interact with technology.
+      </p>
+      <p>
+        Outside of my studies, I am an active and social person who approaches both everyday 
+        and work-related challenges with a positive and solution-oriented mindset.
+      </p>
+    </div>
+
+    <h2 class="gallery-title">Snapshots & experiences</h2>
+
+    <section class="gallery">
+      <div class="photo-card">
+        <img src="/tapas.JPG" alt="Tapas" />
+        <div class="overlay">Tapas & friends</div>
+      </div>
+      <div class="photo-card">
+        <img src="/syttendemai.jpg" alt="17th of May" />
+        <div class="overlay">17th of May 🇳🇴</div>
+      </div>
+      <div class="photo-card">
+        <img src="/sommerferie.jpg" alt="Summer holiday" />
+        <div class="overlay">Summer holidays</div>
+      </div>
+      <div class="photo-card">
+        <img src="/Skole.jpg" alt="School" />
+        <div class="overlay">Student life</div>
+      </div>
+      <div class="photo-card">
+        <img src="/Løpegruppen.jpg" alt="Running group" />
+        <div class="overlay">Running group</div>
+      </div>
+      <div class="photo-card">
+        <img src="/brygga.JPG" alt="Bryggen Bergen" />
+        <div class="overlay">Bryggen, Bergen</div>
+      </div>
+      <div class="photo-card">
+        <img src="/Brannkamp.jpg" alt="Brann match" />
+        <div class="overlay">Brann match</div>
+      </div>
+      <div class="photo-card">
+        <img src="/3.JPG" alt="Friends" />
+        <div class="overlay">With friends</div>
+      </div>
+    </section>
+  </section>
+</Layout>
+
+<style is:global>
+  body {
+    background: #ffefef;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .about-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    animation: fadeIn 1s ease forwards;
+  }
+
+  .title {
+    font-size: 2.8rem;
+    color: #d81b60; /* Rosa hovedfarge */
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1.2px;
+    font-weight: 700;
+  }
+
+  /* Tekst-boks */
+  .personal-info {
+    max-width: 950px;
+    margin: 0 auto 60px;
+    font-size: 1.25rem;
+    line-height: 1.9;
+    color: #333;
+    text-align: center;
+  }
+
+  .highlight-box {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  }
+
+  .gallery-title {
+    font-size: 1.8rem;
+    color: #444;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 600;
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .photo-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .photo-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+
+  .photo-card:hover img {
+    transform: scale(1.05);
+  }
+
+  .photo-card .overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(216, 27, 96, 0.7); /* rosa overlay */
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .photo-card:hover .overlay {
+    opacity: 1;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>

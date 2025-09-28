@@ -1,0 +1,143 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT X Bergen</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #ffefef;
+            margin: 0;
+            padding: 0;
+            color: #6a1b9a;
+            overflow-x: hidden;
+            scroll-behavior: smooth; /* Smooth scrolling */
+        }
+
+        main {
+            min-height: 80vh;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #d81b60;
+            margin-top: 50px;
+            opacity: 0;
+            transform: translateY(-20px);
+            animation: fadeIn 0.8s forwards;
+        }
+
+        p {
+            max-width: 700px;
+            margin: 20px auto;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            opacity: 0;
+            transform: translateY(-20px);
+            animation: fadeIn 0.8s forwards;
+            animation-delay: 0.3s;
+        }
+
+        /* Navigasjon */
+        nav {
+            margin: 25px 0 40px 0;
+        }
+
+        nav a {
+            margin: 0 10px;
+            padding: 10px 18px;
+            border: 2px solid #d81b60;
+            border-radius: 25px;
+            color: #d81b60;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #d81b60;
+            color: #fff;
+        }
+
+        /* Bilder */
+        img {
+            max-width: 600px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            margin: 20px auto;
+            display: block;
+            opacity: 0;
+            transform: translateY(-20px);
+            animation: fadeIn 0.8s forwards;
+            animation-delay: 0.5s;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Fade-in animasjon */
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <Header />
+    <main>
+        <!-- Logo -->
+        <img src="/itxbergen.png" alt="ITxBergen logo" />
+
+        <!-- Navigasjon -->
+        <nav>
+            <a href="#hva-er-itxbergen">Hva er IT X Bergen?</a>
+            <a href="#min-rolle">Min rolle</a>
+        </nav>
+
+        <!-- Seksjon 1 -->
+        <h2 id="hva-er-itxbergen">Hva er IT X Bergen?</h2>
+        <p>
+            Vi er en liten gjeng engasjerte IT-studenter som brenner for å skape muligheter og knytte bånd 
+            mellom studenter og næringslivet i Bergen. Vår rolle er å være et bindeledd mellom IT-studentene 
+            i byen og bedriftene som ønsker å møte fremtidens arbeidstakere.
+        </p>
+        <p>
+            I ITxBergen har vi ulike ansvarsområder som webutvikling, UX-design, økonomi, bedriftskontakt og PR. 
+            Sammen jobber vi tett som et team for å skape engasjement og gode møteplasser for studenter, og bidra 
+            til et levende og inkluderende IT-miljø i Bergen.
+        </p>
+        <p>
+            👉 Les mer på den offisielle nettsiden: 
+            <a href="https://www.itxbergen.no/om-itx" target="_blank" style="color: #d81b60; font-weight: bold;">
+                itxbergen.no/om-itx
+            </a>
+        </p>
+
+        <!-- Seksjon 2 -->
+        <h2 id="min-rolle">Min rolle</h2>
+        <p>
+            Som bedriftsassistent i ITxBergen er jeg i tett kontakt med bedriftene, særlig opp mot vår årlige 
+            karrieredag i september. Jeg tar initiativ til ideer jeg tror både studenter og bedrifter vil like, 
+            og kommuniserer disse videre til bedriftene. Rollen har gitt meg verdifull erfaring i samarbeid, 
+            organisering og relasjonsbygging mellom studenter og næringslivet.
+        </p>
+
+        <!-- Bilde av deg -->
+        <img src="/bedriftsassistent.png" alt="Mie Kronkvist i ITxBergen" />
+    </main>
+    <Footer />
+</body>
+</html>

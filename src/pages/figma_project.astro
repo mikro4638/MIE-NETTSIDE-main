@@ -1,0 +1,300 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hackathon 2024: Highsoft x Gi Gaven Videre</title>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #fff7fa;
+      margin: 0;
+      padding: 0;
+      color: #4a148c;
+      overflow-x: hidden;
+    }
+
+    main {
+      min-height: 80vh;
+      padding: 20px;
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 100px 20px 80px;
+      background: linear-gradient(135deg, #ffe4ec, #f3e5f5, #ede7f6);
+      border-bottom: 2px solid #f8bbd0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: -50px;
+      left: -50px;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at top left, rgba(216,27,96,0.1), transparent 70%);
+      z-index: 0;
+    }
+
+    .hero h1 {
+      position: relative;
+      font-size: 3.4rem;
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(90deg, #d81b60, #6a1b9a);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradient-move 6s ease infinite;
+      background-size: 200% 200%;
+      display: inline-block;
+    }
+
+    /* Underline animation */
+    .hero h1::after {
+      content: '';
+      display: block;
+      margin: 0 auto;
+      width: 0%;
+      height: 4px;
+      background: #d81b60;
+      border-radius: 2px;
+      animation: underline 2s ease forwards;
+    }
+
+    @keyframes underline {
+      to { width: 80%; }
+    }
+
+    @keyframes gradient-move {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      color: #6a1b9a;
+      margin-top: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Timeline */
+    .timeline {
+      position: relative;
+      margin: 60px auto;
+      max-width: 1100px;
+      display: flex;
+      flex-direction: column;
+      gap: 70px;
+    }
+
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 4px;
+      background: linear-gradient(180deg, #d81b60, #7e57c2);
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      box-shadow: 0 0 12px rgba(126,87,194,0.4);
+    }
+
+    .timeline-item {
+      position: relative;
+      display: flex;
+      width: 100%;
+    }
+
+    .timeline-item:nth-child(odd) {
+      justify-content: flex-start;
+      text-align: right;
+    }
+
+    .timeline-item:nth-child(even) {
+      justify-content: flex-end;
+      text-align: left;
+    }
+
+    /* Dots */
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #7e57c2;
+      border: 4px solid #fff;
+      z-index: 2;
+      animation: pulse 2s infinite;
+      box-shadow: 0 0 10px rgba(126,87,194,0.6);
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(126,87,194,0.5); }
+      70% { box-shadow: 0 0 0 20px rgba(126,87,194,0); }
+      100% { box-shadow: 0 0 0 0 rgba(126,87,194,0); }
+    }
+
+    .timeline-content {
+      background: rgba(255,255,255,0.95);
+      padding: 34px 38px;
+      border-radius: 14px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+      max-width: 460px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      backdrop-filter: blur(6px);
+    }
+
+    .timeline-content:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 10px 26px rgba(0,0,0,0.18);
+    }
+
+    /* --- NY underline for h2 i boksene --- */
+    .timeline-content h2 {
+      color: #d81b60;
+      font-size: 1.7rem;
+      margin: 0 0 18px;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 6px;
+    }
+
+    .timeline-content h2::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0%;
+      height: 3px;
+      background: linear-gradient(90deg, #d81b60, #7e57c2);
+      border-radius: 2px;
+      animation: underline-slide 1s ease forwards;
+    }
+
+    @keyframes underline-slide {
+      to { width: 100%; }
+    }
+
+    .timeline-content p {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      color: #444;
+      margin: 0;
+    }
+
+    .timeline-content a {
+      color: #d81b60;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 1.1rem;
+    }
+
+    .timeline-content a:hover {
+      text-decoration: underline;
+    }
+
+    .timeline-content img {
+      width: 100%;
+      border-radius: 12px;
+      margin-top: 20px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+      transition: transform 0.4s ease;
+    }
+
+    .timeline-content img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Responsive */
+    @media screen and (max-width: 768px) {
+      .timeline::after {
+        left: 10px;
+      }
+
+      .timeline-item {
+        justify-content: flex-start !important;
+        text-align: left !important;
+      }
+
+      .timeline-item::before {
+        left: 10px;
+        transform: translateY(-50%);
+      }
+
+      .timeline-content {
+        max-width: 100%;
+        margin-left: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <Header />
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <h1>Hackathon 2024: Highsoft x Gi Gaven Videre</h1>
+      <p>En reise fra idé til seier – på bare 48 timer 🚀</p>
+    </section>
+
+    <!-- Timeline -->
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <h2>💡 Hva er et hackathon?</h2>
+          <p>
+            Et hackathon er et arrangement der folk, vanligvis utviklere og designere, samles for å jobbe sammen på prosjekter i løpet av en kort periode, vanligvis 24 til 48 timer. Målet er å lage nye løsninger eller prototyper på et spesifikt tema.
+          </p>
+          <img src="/figma/Hackathon.jpg" alt="Hackathon Event"/>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <h2>🎁 Om "Gi Gaven Videre"</h2>
+          <p>
+            "Gi Gaven Videre" er et selskap i Bergen som fokuserer på bærekraftig gavegiving. De tilbyr digitale gavekort som lar mottakerne velge veldedige formål å støtte.
+            <a href="https://www.gigavenvidere.no/om-oss">Les mer her</a>.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <h2>🖥️ Prosjektbeskrivelse</h2>
+          <p>
+            Vi i Gruppe 3 utviklet en interaktiv hjemmeside for å gi bedre innsikt i hvordan donasjoner brukes, og motivere til videre støtte.
+            <a href="https://www.figma.com/proto/l6wZZC8z2i85hCVpVCdzXQ/Untitled?node-id=3-1773&starting-point-node-id=1%3A2">Se Figma-prosjektet</a>.
+          </p>
+          <img src="/figma/Gjennomgang.jpg" alt="Prosjektgjennomgang"/>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <h2>🏆 Vi vant!</h2>
+          <p>
+            Med fire ulike perspektiver og utdanningsbakgrunner, i tillegg til et sterkt samarbeid, vant vi Hackathon 2024: Highsoft x Gi Gaven Videre.
+          </p>
+          <img src="/figma/Vinnere.jpg" alt="Vinnere"/>
+        </div>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</body>
+</html>

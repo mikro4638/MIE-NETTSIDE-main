@@ -1,0 +1,69 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+    <div class="cv-container">
+        <h1 class="cv-title">Min CV</h1>
+        <p class="cv-description">
+            Du kan laste ned min CV ved å klikke 
+            <a href="/CV_Mie_Kronkvist.pdf" target="_blank" rel="noopener noreferrer" class="cv-link">her</a>.
+        </p>
+    </div>
+</Layout>
+
+<style is:global>
+    h1 {
+        font-family: 'Poppins', sans-serif;
+        font-size: 2.5rem; /* Større skriftstørrelse for overskriften */
+    }
+    p {
+        font-family: 'Poppins', sans-serif;
+        font-size: 1.25rem; /* Større skriftstørrelse for teksten */
+    }
+
+    .cv-container {
+        text-align: center;
+        background-color: #f9f9f9; /* Lys bakgrunnsfarge */
+        border-radius: 8px;
+        padding: 40px; /* Økt padding for mer plass i boksen */
+        max-width: 900px; /* Økt maksimal bredde */
+        margin: 40px auto; /* Økt margin for å gi mer plass */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .cv-title {
+        color: #ff6f61;
+        margin-bottom: 20px; /* Økt margin mellom overskriften og teksten */
+        animation: fadeIn 1s forwards; /* Animasjon for fade-in */
+    }
+
+    .cv-description {
+        max-width: 700px; /* Økt maksimal bredde for teksten */
+        margin: 0 auto;
+        color: #555; /* Grå tekst for bedre lesbarhet */
+    }
+
+    .cv-link {
+        color: #ff6f61;
+        text-decoration: underline;
+        font-weight: bold;
+        transition: color 0.3s ease;
+    }
+
+    .cv-link:hover {
+        color: #ff3b2e; /* Litt mørkere rød ved hover */
+    }
+
+    /* Animasjon for fade-in */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>

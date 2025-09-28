@@ -1,0 +1,329 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Volunteer Work - Mie Kronkvist">
+  <main class="volunteer-main">
+
+    <!-- Hero -->
+    <section class="hero">
+      <h1>Volunteer Work</h1>
+      <p>Engagements that shaped my academic and professional journey.</p>
+      <nav>
+        <a href="#inkogvito">Inkogvito</a>
+        <a href="#fintech">Fintech Festival</a>
+      </nav>
+    </section>
+
+    <!-- Inkogvito -->
+    <section id="inkogvito" class="card fade-in inkogvito-card">
+      <div class="inkogvito-header">
+        <img src="/inkogvito-logo.png" alt="Inkogvito logo" class="inkogvito-logo" />
+        <h2 class="interactive-title">🎓 Treasurer – Inkogvito</h2>
+      </div>
+      <p>
+        I am currently the <strong>Treasurer (Økonomiansvarlig)</strong> of <em>Inkogvito</em>, 
+        the student association for Cognitive Science at the University of Bergen. 
+        As a small program with around 30 students per year, building a strong community is essential, 
+        and the association works to create an inclusive environment through social events and initiatives.
+      </p>
+      <p>
+        In my role as Treasurer, I am responsible for the association’s <strong>budgeting, financial management, 
+        and contract negotiations</strong>, ensuring that resources are used in the best possible way to benefit all students.
+      </p>
+
+      <h3>Styret</h3>
+      <div class="gallery">
+        <img src="/styret2025.jpg" alt="Styret vår 2025" />
+        <img src="/styret-høst2025.jpg" alt="Styret høst 2025" />
+      </div>
+    </section>
+
+    <!-- Fintech Festival -->
+    <section id="fintech" class="card fade-in fintech-card">
+      <div class="fintech-header">
+        <a href="https://www.financeinnovation.no/" target="_blank">
+          <img src="/nfi-logo.png" alt="NCE Finance Innovation logo" class="org-logo fintech-logo clickable-logo" />
+        </a>
+        <div class="fintech-arrow">⬆</div>
+        <p class="fintech-text">Click to visit NCE Finance Innovation</p>
+        <h2 class="fintech-title">🚀 Volunteer – Fintech Festival 2025</h2>
+      </div>
+
+      <p>
+        <strong>Fintech Festival</strong> is a three-day event in Bergen organized by 
+        <em>NCE Finance Innovation</em>, bringing together experts, startups, and industry leaders 
+        within financial technology. The festival combines professional talks, panel discussions, 
+        and networking opportunities in a unique and engaging format.
+      </p>
+      <p>
+        As a <strong>volunteer</strong>, I contributed with <strong>rigging, technical assistance, and event support</strong>, 
+        ensuring that everything ran smoothly from start to finish. More importantly, the role gave me the opportunity to 
+        <strong>connect with fintech companies and build valuable ties to the business community</strong>, 
+        gaining insight into innovation and collaboration across the industry.
+      </p>
+
+      <h3>Festivalopplevelse</h3>
+      <div class="gallery single">
+        <img src="/fintech-frivillig.jpg" alt="Frivilliggruppe på Fintech Festival 2025" />
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style is:global>
+  body {
+    background: #fff7f9;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+  }
+
+  .hero {
+    text-align: center;
+    padding: 80px 20px 50px;
+    background: linear-gradient(135deg, #ffe4ec, #fff7f9);
+    border-bottom: 2px solid #f3d4de;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+    color: #d81b60;
+    margin-bottom: 15px;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+    color: #6a1b9a;
+    margin-bottom: 30px;
+  }
+
+  .hero nav a {
+    margin: 0 10px;
+    padding: 10px 20px;
+    border: 2px solid #d81b60;
+    border-radius: 30px;
+    color: #d81b60;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+
+  .hero nav a:hover {
+    background: #d81b60;
+    color: white;
+  }
+
+  .card {
+    background: white;
+    border-radius: 15px;
+    padding: 40px 25px;
+    margin: 60px auto;
+    max-width: 950px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  h2 {
+    font-size: 2rem;
+    color: #6a1b9a;
+    margin: 20px 0;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+    color: #d81b60;
+    margin-top: 30px;
+  }
+
+  p {
+    max-width: 750px;
+    margin: 15px auto;
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 25px;
+  }
+
+  .gallery img {
+    max-width: 420px;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .gallery img:hover {
+    transform: scale(1.04);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  }
+
+  .gallery.single img {
+    max-width: 750px;
+  }
+
+  /* Inkogvito spesialeffekter */
+  .inkogvito-card {
+    background: linear-gradient(145deg, #ffffff, #fff5fb);
+    border: 2px solid #f3d4de;
+  }
+
+  .inkogvito-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(216, 27, 96, 0.2);
+  }
+
+  .inkogvito-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 25px;
+  }
+
+  .inkogvito-logo {
+  max-width: 420px;
+  margin: 0 auto 30px;
+  display: block;
+  background: white;
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.15);
+  transform: rotate(-4deg); /* litt mer skjev */
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.inkogvito-logo:hover {
+  transform: rotate(-1deg) scale(1.1); /* retter seg nesten opp + zoom */
+  box-shadow: 0 12px 32px rgba(106, 27, 154, 0.35);
+}
+
+  .interactive-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, #6a1b9a, #d81b60);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 15px;
+    position: relative;
+  }
+
+  .interactive-title::after {
+    content: "";
+    display: block;
+    height: 3px;
+    background: linear-gradient(90deg, #6a1b9a, #d81b60);
+    margin: 6px auto 0;
+    width: 0;
+    border-radius: 2px;
+    transition: width 0.4s ease;
+  }
+
+  .inkogvito-card:hover .interactive-title::after {
+    width: 80%;
+  }
+
+  /* Fintech spesialeffekter */
+  .fintech-card {
+    background: linear-gradient(145deg, #ffffff, #f0f7ff);
+    border: 2px solid #d4e2f3;
+  }
+
+  .fintech-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(33, 150, 243, 0.25);
+  }
+
+  .fintech-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 25px;
+  }
+
+  .fintech-logo {
+  max-width: 380px; /* gjør den større */
+  margin: 0 auto 25px;
+  display: block;
+  background: white;
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.18);
+  transform: rotate(-3deg); /* nå samme vei som Inkogvito */
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.fintech-logo:hover {
+  transform: rotate(0deg) scale(1.1); /* retter seg opp + zoom */
+  box-shadow: 0 12px 32px rgba(33, 150, 243, 0.35);
+}
+
+
+  .clickable-logo {
+    cursor: pointer;
+  }
+
+  .fintech-arrow {
+    font-size: 1.5rem;
+    color: #333;
+    margin-top: 5px;
+    animation: bounce 1.5s infinite;
+  }
+
+  .fintech-text {
+    margin-top: 5px;
+    font-size: 1rem;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+  }
+
+  .fintech-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, #2196f3, #6a1b9a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 15px;
+    position: relative;
+  }
+
+  .fintech-title::after {
+    content: "";
+    display: block;
+    height: 3px;
+    background: linear-gradient(90deg, #2196f3, #6a1b9a);
+    margin: 6px auto 0;
+    width: 0;
+    border-radius: 2px;
+    transition: width 0.4s ease;
+  }
+
+  .fintech-card:hover .fintech-title::after {
+    width: 80%;
+  }
+
+  /* Animations */
+  .fade-in {
+    opacity: 0;
+    animation: fadeIn 0.8s forwards;
+    animation-delay: 0.2s;
+  }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

@@ -1,0 +1,84 @@
+---
+// Header.astro
+const currentPath = Astro.url.pathname;
+---
+
+<header>
+  <div class="logo">Mie Kronkvist</div>
+  <nav>
+    <ul>
+      <li><a href="/" class={`nav-link ${currentPath === '/' ? 'active' : ''}`}>Home</a></li>
+      <li><a href="/about" class={`nav-link ${currentPath === '/about' ? 'active' : ''}`}>About</a></li>
+      <li><a href="/projects" class={`nav-link ${currentPath === '/projects' ? 'active' : ''}`}>Projects</a></li>
+      <li><a href="/figma_project" class={`nav-link ${currentPath === '/figma_project' ? 'active' : ''}`}>Figma Project</a></li>
+      <li><a href="/itxbergen" class={`nav-link ${currentPath === '/itxbergen' ? 'active' : ''}`}>IT X Bergen</a></li>
+      <li><a href="/volunteering" class={`nav-link ${currentPath === '/volunteering' ? 'active' : ''}`}>Volunteer Work</a></li>
+      <li><a href="https://www.strava.com/athletes/68186266" target="_blank" class="nav-link">Strava</a></li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  header {
+    background-color: #0b1320;
+    height: 90px; /* tykkere header */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    padding: 0 2rem;
+  }
+
+  .logo {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #ff6f61;
+    white-space: nowrap;
+  }
+
+  nav {
+    flex: 1;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly; /* jevn fordeling over hele bredden */
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+
+  .nav-link {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 500;
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center; /* gjør at teksten fyller headeren vertikalt */
+    padding: 0 1rem;
+    transition: color 0.3s;
+  }
+
+  .nav-link:hover {
+    color: #ff6f61;
+  }
+
+  .nav-link.active {
+    color: #ff6f61;
+  }
+
+  .nav-link.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px; /* gir luft mellom tekst og strek */
+    height: 3px;
+    width: 100%;
+    background-color: #ff6f61;
+    border-radius: 2px;
+  }
+</style>
